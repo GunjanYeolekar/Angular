@@ -1,0 +1,117 @@
+
+  <div class="row align-items-center">
+  
+    <div class="col-md-6" style="text-align:center">
+      <div class="col-md-20 mt-3 mt-md-0">
+        <h2  style="color: rgb(179, 16, 89);font-family: Arial Narrow;">Contact Our</h2>
+        <h2 style="font-family: Arial Narrow;">Customer Support Center</h2>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <img width="200" height="120" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58O1be5cIXMHOltjajhthBv8rVKA1dl6leg&amp;usqp=CAU" class="img-fluid mt-3">
+    </div>
+ 
+  </div>
+  
+  <div style="text-align:center" class="form-group mt-5">
+    <h3 style="font-family: Calibri light;">Contact Information</h3>
+    <h5 style="font-family: Calibri light;">Please fill out your contact information below.</h5>
+  </div>
+
+  <form [formGroup] = "MarvellousForm">
+  <div class="form-group">
+  <div class="row">
+    <div class="col">
+      <div class="form-group mt-3">
+        <label>Name*</label>
+        <input [class.is-invalid] = "MarvellousForm.get('firstname')?.invalid" type="text" class="form-control" formControlName="firstname">
+        <small [class.d-none]="MarvellousForm.get('firstname')?.valid" class="text-danger">First name is required</small>
+      </div>
+    </div>
+  
+    <div class="col">
+      <div class="form-group mt-3">
+        <label></label>
+        <input [class.is-invalid] = "MarvellousForm.get('lastname')?.invalid" type="text" class="form-control" formControlName="lastname">
+        <small [class.d-none]="MarvellousForm.get('lastname')?.valid" class="text-danger">Last name is required</small>
+      </div>
+    </div>
+ </div>
+ </div>
+
+  <div class="form-group">
+  <div class="form-group mt-3">
+    <label>Email*</label>
+    <input [class.is-invalid] = "MarvellousForm.get('emailname')?.invalid" type="email" class="form-control" formControlName="emailname">
+    <small [class.d-none]="MarvellousForm.get('emailname')?.valid" class="text-danger">Email field contains any alphanumeric contents 
+    before @ symbol. After @ symbol there should be minimum 1 letter before. and after . there should be minimum 2 letters.</small>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <div class="form-group mt-3">
+    <label>City*</label>
+    <input [class.is-invalid] = "MarvellousForm.get('cityname')?.invalid" type="text" class="form-control" formControlName="cityname">
+    <small [class.d-none]="MarvellousForm.get('cityname')?.valid" class="text-danger">Minimum 4 alphabets required</small>
+  </div>
+  </div>
+  
+  <div class="form-group">
+  <div class="form-group mt-3">
+    <label>Phone*</label>
+    <input [class.is-invalid] = "MarvellousForm.get('phonenumber')?.invalid" type="tel" class="form-control" formControlName="phonenumber">
+    <small [class.d-none]="MarvellousForm.get('phonenumber')?.valid" class="text-danger">It should contains only digits. Length of field should be 10 (0-9)</small>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <div class="form-group mt-3">
+  <div class="mb-3">
+    <label>Select State</label> 
+     <div class="form-check">
+       <input class="form-check-input" type="radio" name="State" value="Mh"> 
+       <label class="form-check-label">Maharashtra</label> 
+     </div>
+     <div class="form-check">
+         <input class="form-check-input" type="radio" name="State" value="Gj"> 
+         <label class="form-check-label">Gujrat</label> 
+      </div>
+       <div class="form-check">
+        <input class="form-check-input" type="radio" name="State" value="Up"> 
+        <label class="form-check-label">UtterPradesh</label> 
+      </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-group mt-3">
+      <label>ZIP code*</label>
+      <input [class.is-invalid] = "MarvellousForm.get('zip')?.invalid" type="text" class="form-control" formControlName="zip">
+      <small [class.d-none]="MarvellousForm.get('zip')?.valid" class="text-danger">It should contains all digits and length of zip code should be 5</small>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <div class="form-group mt-3">
+    <label>Address*</label>
+    <input [class.is-invalid] = "MarvellousForm.get('address')?.invalid" type="text" class="form-control" formControlName="address">
+    <small [class.d-none]="MarvellousForm.get('address')?.valid" class="text-danger">Address is required</small>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <div class="form-group mt-3">
+    <label> Your Feedback
+      <textarea formControlName="description" cols="20" rows="15" class="form-control"></textarea>
+      <small [class.d-none]="MarvellousForm.get('description')?.valid" class="text-danger">It should contains minimum 30 characters</small>
+    </label>
+  </div>
+  </div>
+
+  <div class="mx-auto" style="width: 200px;" class="form-group mt-4" style="text-align:center">
+    <button type="submit" class="btn" style="background-color: rgb(179, 16, 89);" [disabled]="!MarvellousForm.valid">Submit Form</button>  
+  </div>
+
+</form>
